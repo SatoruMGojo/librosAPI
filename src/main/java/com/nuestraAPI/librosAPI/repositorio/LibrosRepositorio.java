@@ -25,8 +25,26 @@ public class LibrosRepositorio {
         }
         return null;
     }
-    public Libro actualizarLibro(Libro libro) {
+   public Libro actualizarLibro(int id, Libro libro) {
+        for (Libro libroAux : Libros) {
+            if (libroAux.getIdLibro() == id) {
+                libroAux.setTituloLibro(libro.getTituloLibro());
+                libroAux.setGeneroLibro(libro.getGeneroLibro());
+                libroAux.setAutorLibro(libro.getAutorLibro());
+                return libroAux;
 
-    }
+            }
+        }
+        return null;
+   }
+   public boolean eliminarLibro(int id) {
+        for (Libro libroAux : Libros) {
+            if (libroAux.getIdLibro() == id) {
+                Libros.remove(libroAux);
+            }
+            return true;
+        }
+        return false;
+   }
 
 }

@@ -1,11 +1,12 @@
 package com.nuestraAPI.librosAPI.modelo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 
-@Data
 @AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Libro {
     private int idLibro;
     private String tituloLibro;
